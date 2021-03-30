@@ -1,0 +1,20 @@
+[package]
+name = "wasm-summarize"
+version = "0.1.0"
+authors = ["ankolaver <47784720+ankolaver@users.noreply.github.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+#default = ["console_error_panic_hook"]
+
+[dependencies]
+wasm-bindgen = { version="0.2.63", features=["serde-serialize"]}
+#rust-bert = "0.14.0"
+anyhow = "1.0.38"
+lazy_static = "1.4.0"
+regex = "1.4.5"
+crossbeam = "0.8.0"
+
