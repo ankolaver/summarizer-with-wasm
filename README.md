@@ -59,13 +59,13 @@ If it fails with errors, the crate likely cannot be used for webassembly. Oh no!
 
 #### Detecting which depencies are unsupported by WebAssembly.
 First, we head back to the error.
-![f7c0faaddfa1fd933692e150004bc55f.png](:/0f92fa0a54cd425092cf9f25eba739a6)
+![image](https://user-images.githubusercontent.com/47784720/112980402-6a4fdd80-918c-11eb-8e03-f65335f8601f.png)
 
 Copy the file path, and open it up. I decided to open up the `cargo.toml` file in the crate's directory, and identify its name. In this case, the **`fs2` crate seems to be causing the WASM incompatability issues.**
 
 Back in my project directory, I tried using the `cargo tree -p <package name>` command to showcase a list of all the dependencies it uses. With a little guess and check on the various crates, it appears that the  `rust-bert` is not compatible with webassembly, as it relies on `fs2`.
 
-![Screenshot from 2021-03-30 15-08-28.png](:/cf3939f6f0d24ee1b38fc2ee0f3a5079)
+![image](https://user-images.githubusercontent.com/47784720/112980478-85bae880-918c-11eb-8810-0481b32e8b93.png)
 
 > FYI: I wanted to use rust-bert for Natural Language purposes on rust. A check on github shows no support yet for wasm.
 
